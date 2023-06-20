@@ -5,8 +5,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestControllerInitial {
     @GetMapping("/")
-    public String sayHello() {
-        return "Hello worlda553o";
+    public String sayHello() {  // endpoint
+        return "Hello worldao";
+    }
+    @GetMapping("/ola") // endpoint
+    public String sayYo() {
+        return "uepa yo";
     }
 
 }
