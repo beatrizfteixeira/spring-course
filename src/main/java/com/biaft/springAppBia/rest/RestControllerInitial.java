@@ -12,7 +12,7 @@ public class RestControllerInitial {
     private String name;
     private Coach myCoach;
     @Autowired
-    public RestControllerInitial (@Qualifier("basketballCoach")Coach coach){ // FIRST CHARACTER LOWER CASE !!
+    public RestControllerInitial (Coach coach){
         myCoach = coach;
     }
     @GetMapping("/")
