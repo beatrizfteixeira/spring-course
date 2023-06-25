@@ -42,4 +42,10 @@ private EntityManager entityManager;
         return query.getResultList();
     }
 
+    @Override
+    @Transactional // db update !
+    public void update(Student student) {
+        entityManager.merge(student);
+    }
+
 }
