@@ -30,7 +30,7 @@ private EntityManager entityManager;
 
     @Override
     public List<Student> findAll() {
-        TypedQuery<Student> query = entityManager.createQuery("FROM Student", Student.class);
+        TypedQuery<Student> query = entityManager.createQuery("FROM Student order by lastName asc", Student.class);
 
         return query.getResultList();
     }
