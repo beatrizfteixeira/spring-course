@@ -56,4 +56,11 @@ private EntityManager entityManager;
         entityManager.remove(student);
     }
 
+    @Override
+    @Transactional
+    public int deleteAll() {
+        int nRowsDeleted = entityManager.createQuery("DELETE FROM Student").executeUpdate();
+        return nRowsDeleted;
+    }
+
 }
