@@ -48,4 +48,12 @@ private EntityManager entityManager;
         entityManager.merge(student);
     }
 
+    @Override
+    @Transactional // modifying database !
+    public void deleteById(Integer id) {
+        // retrieve the student
+        Student student = findById(id);
+        entityManager.remove(student);
+    }
+
 }
