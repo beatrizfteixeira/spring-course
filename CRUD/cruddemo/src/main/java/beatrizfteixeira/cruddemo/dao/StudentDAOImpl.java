@@ -35,4 +35,11 @@ private EntityManager entityManager;
         return query.getResultList();
     }
 
+    @Override
+    public List<Student> findByLastName(String theLastName) {
+        TypedQuery<Student> query = entityManager.createQuery("FROM Student WHERE lastName=:theData", Student.class);
+        query.setParameter("theData", theLastName);
+        return query.getResultList();
+    }
+
 }

@@ -19,7 +19,7 @@ public class CruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			query(studentDAO);
+			queryLastName(studentDAO);
 		};
 	}
 
@@ -49,6 +49,12 @@ public class CruddemoApplication {
 		List<Student> listStudents = studentDAO.findAll();
 
 		for (Student s : listStudents) {
+			System.out.println(s);
+		}
+	}
+	public void queryLastName(StudentDAO studentDAO) {
+		List<Student> listStudent = studentDAO.findByLastName("Modas");
+		for (Student s : listStudent) {
 			System.out.println(s);
 		}
 	}
