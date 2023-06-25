@@ -20,4 +20,9 @@ private EntityManager entityManager;
         entityManager.persist(student);
     }
 
+    @Override // simply read-only query doesnt need @Transactional annotation
+    public Student findById(Integer id) {
+        return entityManager.find(Student.class, id);
+    }
+
 }
